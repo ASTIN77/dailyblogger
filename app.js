@@ -23,7 +23,7 @@ var express         = require("express"),
 
 // Populate the Blog database with sample blogs
 
-seedDB();
+/*seedDB();*/
 
 
 
