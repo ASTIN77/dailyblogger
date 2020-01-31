@@ -10,7 +10,7 @@ var express         = require("express"),
     
 // Mongoose Database Connection
 
-    mongoose.connect(process.env.BLOGGERURL, { useMongoClient: true });
+    mongoose.connect(process.env.BLOGGERURL, { useNewUrlParser: true, useUnifiedTopology: true });
     
     
     app.set("view engine", "ejs");
