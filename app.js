@@ -1,4 +1,5 @@
 var express         = require("express"),
+    dotenv          = require('dotenv'),
     app             = express(),
     bodyParser      = require("body-parser"),
     mongoose        = require("mongoose"),
@@ -6,11 +7,12 @@ var express         = require("express"),
     seedDB          = require("./seeds"),
     methodOverride  = require("method-override"),
     expressSanitizer = require("express-sanitizer");
+    dotenv.config();
     
     
 // Mongoose Database Connection
 
-    mongoose.connect(process.env.BLOGGERURL, { useNewUrlParser: true, useUnifiedTopology: true });
+    mongoose.connect(process.env.BLOGGERURL, { useNewUrlParser: true, useUnifiedTopology: true});
     
     
     app.set("view engine", "ejs");
@@ -127,6 +129,6 @@ app.delete("/blogs/:id", function(req,res){
      });
 });
     
-    app.listen(process.env.PORT, process.env.IP, function(){
-        console.log("Blog Application Server Started Successfully");
+    app.listen(process.env.PORT, function(){
+        console.log("Blog Application Server Started Successfully on PORT",process.env.PORT);
     });
