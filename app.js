@@ -12,7 +12,19 @@ var express         = require("express"),
     
 // Mongoose Database Connection
 
-    mongoose.connect(process.env.BLOGGERURL, { useNewUrlParser: true, useUnifiedTopology: true});
+const connectDB = async () => {
+
+    try {
+        const conn = await mongoose.connect(process.env.BLOGGERURL, { useNewUrlParser: true, useUnifiedTopology: true});
+        console.log(`MongoDB Connected: ${conn.connection.host}`);
+    }
+    catch (error) 
+    {
+        console.log(error);
+        process.exit(1);
+    }
+
+}
     
     
     app.set("view engine", "ejs");
@@ -128,7 +140,11 @@ app.delete("/blogs/:id", function(req,res){
          }
      });
 });
-    
+
+connectDB().then(() => {
+
     app.listen(process.env.PORT, function(){
         console.log("Blog Application Server Started Successfully on PORT",process.env.PORT);
     });
+    
+});
