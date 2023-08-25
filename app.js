@@ -29,6 +29,7 @@ app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(expressSanitizer());
 app.use(methodOverride("_method"));
+app.set("port", 3000);
 
 // Populate the Blog database with sample blogs
 
@@ -131,12 +132,11 @@ app.delete("/blogs/:id", function (req, res) {
     }
   });
 });
-
 connectDB().then(() => {
-  app.listen(process.env.PORT, function () {
+  app.listen(app.get("port"), () => {
     console.log(
       "Blog Application Server Started Successfully on PORT",
-      process.env.PORT
+      app.get("port")
     );
   });
 });
