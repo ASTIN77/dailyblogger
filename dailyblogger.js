@@ -29,7 +29,8 @@ app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(expressSanitizer());
 app.use(methodOverride("_method"));
-app.set("port", 3000);
+app.set("port", 3002);
+app.set("views", __dirname + "/views");
 
 // Populate the Blog database with sample blogs
 
