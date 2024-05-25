@@ -16,7 +16,8 @@
     "express": "^4.17.1",
     "express-sanitizer": "^1.0.5",
     "method-override": "^2.3.10",
-    "mongoose": "^6.7.3"
+    "mongoose": "^6.7.3",
+    "nx": "^19.1.0"
   },
   "repository": {
     "type": "git",
