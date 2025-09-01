@@ -11,12 +11,15 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
-    "dotenv": "^16.0.3",
+    "connect-mongo": "^5.1.0",
+    "dotenv": "^16.6.1",
     "ejs": "^2.6.2",
     "express": "^4.17.1",
-    "express-sanitizer": "^1.0.5",
-    "method-override": "^2.3.10",
-    "mongoose": "^6.7.3",
+    "express-sanitizer": "^1.0.6",
+    "express-session": "^1.18.2",
+    "method-override": "^3.0.0",
+    "mongodb": "^6.19.0",
+    "mongoose": "^8.18.0",
     "nx": "^19.1.0"
   },
   "repository": {
